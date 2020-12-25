@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta lang="pt-br">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--O Quirks mode faz o site ser interpretado como uma versão mais antiga do IE, o que pode fazer teu site falhar, então ao ao usar X-UA-Compatible com o valor IE=edge ele vai forçar o navegador renderizar com a mais recente.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Primeiro Exemplo React</title>
+    </head>
+    <body>
+        <div id="teste"></div>
+
+        <script type="text/babel">
+        /*Babel e Transpilacao
+        O Babel é um compilador JavaScript, ou seja, com ele a gente consegue converter códigos modernos do JavaScript para códigos mais antigos, esse processo de ler um código novo e converter para velho é chamado de transpilação, ou seja, ele vai transpilar nosso código novo para um antigo. Dessa maneira, conseguimos escrever nossos códigos fontes em versões mais novas.*/
+            class App extends React.Component {
+                /*Essa classe "App" representa um componente React (Rect.Component) e herda (Resgata Caracteristicas/Funcoes/Atributos deste componente) da super classe React.Component*/ 
+                render() {
+                    /*O metodo que renderiza o retorno de JSX criando o HTML necessario para compor a UI do Usuario.*/
+                    return (
+                        <div>
+                            <p> Ola, este e um teste de um componente React! </p>
+                        </div>
+                    )
+                }
+            }
+            ReactDOM.render(<App />, document.getElementById("teste"))
+            /*O primeiro argumento ('App') e o componente em que iremos renderizar na tela.
+            Enquanto o segundo argumento (document.getElementById("teste")) eh um Container HTML (Eh a parte do nosso projeto que vai receber o componente) que vai receber o componente App*/
+        </script>
+        <script defer crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script defer crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+        <!--O atributo async.
+            O atributo async é usado para indicar ao navegador que o script pode ser executado assincronamente. A análise do HTML não irá ser pausada quando encontrar esse elemento script – sua requisição ocorrerá paralelamente e sua execução pode acontecer a qualquer momento em que o script seja completamente carregado.
+        -->
+        <!--O atributo defer.
+            O atributo defer diz ao navegador para executar o script apenas quando a análise do HTML estiver finalizada.-->
+
+        <!-- Se por exemplo eu quero que o meu codigo HTML seja executado primeiro e os meus codigos script seja executados depois da pagina ser carregada eu posso colocar os meus codigos scripts internos fodado body. -->
+    </body>
+</html>

@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  /*Centralizar todo o conteudo do nosso App. Que basicamente e a pagina inteira.*/
+}
+
+.App-logo {
+  height: 70vmin;
+  /*
+  Neste meu caso eu coloquei 70vmin ou seja ele vai ter "70%" da tela ocupada de forma minima.
+
+  Enquanto vh e vw estão sempre relacionados com a altura e largura da viewport, respectivamente as unidades de CSS moderno vmin e vmax estão relacionados com o valor máximo e mínimo destas larguras e alturas, dependendo de qual é a menor e a maior.
+
+  Por exemplo, se o navegador foi ajustado para 1100px de largura e a altura 700px, 1vmin seria 7px e 1vmax seria 11px. Contudo, se a largura foi ajustada para 800px e a altura definida para 1080px, vmin seria igual a 8px e vmax 10.8px.
+  */
+  pointer-events: all;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .BotaoColor {
+    animation: App-Button-Color infinite 20s linear;
+  }
+  /* Esta funcao faz um elemento girar. */
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    /* Esta funcao CSS coloca uma velocidade na rotacao de um elemento. */
+  }
+}
+
+
+@keyframes App-Button-Color {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(10000deg);
+    /* Esta funcao CSS coloca uma velocidade na rotacao de um elemento. */
+  }
+}
