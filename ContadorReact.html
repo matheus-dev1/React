@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="pt-br">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contador com React</title>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function App(){
+                const [contador, setContador] = React.useState(0);
+
+                function FunContador(event){
+                    event.preventDefault();
+                    setContador(contador + 1)
+                }
+
+                return(
+                    <div>
+                        <button onClick={FunContador}>{contador}</button>
+                        
+                    </div>
+                );
+            }
+            ReactDOM.render(<App />, document.getElementById("root"))
+        </script>
+        <script defer crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script defer crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    </body>
+</html>

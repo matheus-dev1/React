@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="pt-br">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Titulo</title>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <!-- 5. Criar um formulário com três campos (CEP, rua e bairro), quando o usuário terminar de digitar um CEP, preencher os campos de rua e o bairro referente ao CEP digitado, usar a seguinte API:https://viacep.com.br/ws/01001000/json/ -->
+
+        <script type="text/babel">
+            function App(){
+                const [url, setUrl] = React.useState([]);
+
+                React.useEffect(() => {
+                    async function chamaApi() {
+                        if (url.length === 8) {
+                        const urlApi = "https://viacep.com.br/ws/" + url + "/json/"
+                        const response = await fetch(urlApi);
+                        const data = await response.json();
+                        setUrl(data)
+                        }
+                    }
+                    chamaApi()
+                }, [url])
+
+                function changeCep(event) {
+                    setUrl(event.target.value)
+                }
+
+                return(
+                    <div>
+                        <input type="text" placeholder="CEP" onChange={changeCep}/>
+                        <input type="text" placeholder="Logradouro" value={url.logradouro}/>
+                        <input type="text" placeholder="Bairro" value={url.bairro}/>
+                    </div>
+                );
+            }
+            ReactDOM.render(<App />, document.getElementById("root"))
+        </script>
+        <script defer crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script defer crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    </body>
+</html>
