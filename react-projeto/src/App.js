@@ -47,6 +47,7 @@ function App() {
         <Footer2 dados={ {ano: 2020, mes: 12, dia: 19} }/>
         {/*Eu posso passar um Json tambem*/}
         <Footer3 />
+        {/* Estou passando estas propriedade para props de FooterClass.js */}
         <FooterClass dados={ {ano: 2020, mes: 12, dia: 19} }/>
         {/*Temos que passar os parametros para o props do mesmo jeito sendo componente de classe. */}
         {elementName}

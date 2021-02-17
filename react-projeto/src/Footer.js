@@ -20,9 +20,10 @@ export function Footer2 (props) {
 
 export function Footer3 () {
     return (
-        <Footer2 dados={ 
-                    {ano: 2020, mes: 12, dia: 19}
-                    } />
+        <Footer2 
+            dados={ 
+                {ano: 2020, mes: 12, dia: 19}
+        } />
         //Meu componente Footer3 e um componente do tipo Footer e o Footer e um componente funcional.
     );
 }

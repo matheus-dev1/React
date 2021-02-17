@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="pt-br">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bind and This</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            class App extends React.Component{
+                constructor(props){
+                    super(props)
+                    this.state = {color: "red"}
+                    // Eu uso o this para esta changeColor para ele se referir a changeColor deste objeto changeChange color fora do constructor, por causa que eu estou colocando ele dentro do escopo do construtor. Porque ele dentro do construtor na existe.
+                    
+                    // Como eu estou usando a minha funcao dentro de um setInterval e dentro do escopo do construtor eu preciso passar o .bind para ele referenciar para a funcao de fora do constructor porque dentro do constructor ela nao existe.
+                    setInterval(this.changeColor.bind(this), 1000)
+                }
+
+                changeColor(){
+                    if (this.state.color == "red"){
+                        this.setState({color: "blue"})
+                    } else {
+                        this.setState({color: "red"})
+                    }
+                }
+
+                render(){
+                    return(
+                        <div style={{backgroundColor: this.state.color}}>Que Deus tenha piedade de nossas almas</div>
+                    )
+                }
+            }
+            ReactDOM.render(<App />, document.getElementById("root"))
+        </script>
+        <script defer crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script defer crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    </body>
+</html>
