@@ -1,0 +1,5 @@
+/* A classe active eh comumnete usada para mostrar que algo ou uma pagina esta ativa, assim fazendo um controle de determinada coisa que deve ocorrer quando esta classe estiver em uma tag ou componente. */
+
+.active {
+    color: tomato
+}

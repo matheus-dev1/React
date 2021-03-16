@@ -1,0 +1,9 @@
+.card {
+    width: 15rem;
+    text-align: center;
+    color: white;
+}
+
+.card-bg-cart{
+    background-color: chartreuse;
+}

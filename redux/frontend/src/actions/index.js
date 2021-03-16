@@ -1,7 +1,7 @@
 // Aqui eu estou importanto todos os tipos de acoes.
 import * as actionType from './actionTypes.js'
 
-// Eu estou criando esta funcao para facilitar na chamda do dispatch, porque assim eu nao preciso passar o paraemtro type com o nome da acao toda a vez qu eu preciso usa-la criando um padrao e evitando erros.
+// Eu estou criando esta funcao para facilitar na chamada do dispatch, porque assim eu nao preciso passar o paraemtro type com o nome da acao toda a vez que eu preciso usa-la criando um padrao e evitando erros.
 // REDUCER Paragrafo.js
 export function UPDATE_PARAGRAFO(updateParagrafo) {
     return({

@@ -2,3 +2,4 @@
 export const UPDATE_PARAGRAFO = "UPDATE_PARAGRAFO"
 export const ADD_BUTTON = "ADD_BUTTON"
 export const SUB_BUTTON = "SUB_BUTTON"
+// action.type tudo em MAIUSCULO
