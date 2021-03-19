@@ -28,6 +28,12 @@ function Header(){
                     </li>
 
                     <li className="nav-item active">
+                        <Link to="/carrinho" className="nav-link text-white">
+                            Carrinho
+                        </Link>
+                    </li>
+
+                    <li className="nav-item active">
                         <Link to="/lojas" className="nav-link text-white">
                             Nossas Lojas
                         </Link>

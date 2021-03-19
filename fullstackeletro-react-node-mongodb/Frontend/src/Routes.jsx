@@ -9,19 +9,16 @@ import Index from "./Pages/Index/index.js";
 import Lojas from "./Pages/Lojas";
 import Pedidos from "./Pages/Pedidos";
 import Produtos from './Pages/Produtos';
+import CartS from './Pages/Cart/CartS'
 
 function Routes(){
     return(
         <Switch>
-            {/* Pagina Inicial */}
             <Route exact path="/" component={Index}/>
-            {/* Produtos */}
             <Route exact path="/produtos" component={Produtos}/>
-            {/* Lojas */}
+            <Route exact path="/carrinho" component={CartS}/>
             <Route exact path="/lojas" component={Lojas}/>
-            {/* Pedidos */}
             <Route exact path="/pedidos" component={Pedidos}/>
-            {/* Contato */}
             <Route exact path="/contato" component={Contato}/>
         </Switch>
     );

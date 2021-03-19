@@ -1,23 +1,16 @@
 import React from "react";
-// Eu faco o import do react para poder usar codigo jsx.
-import {Link} from "react-router-dom";
-// import fogao1 from '../../imgs/Produtos/fogao1.jpeg';
+import { useDispatch, useSelector } from 'react-redux'
+import { ADD_TO_CART } from '../../actions'
 import './produtos.css';
 
-
 function Produtos() {
-  // Um componente que na realidade eh uma PAGINA.
+    const dispatch = useDispatch()
 
-  let [produtos, setProdutos] = React.useState([]);
-  let [renderProdutos, setRenderProdutos] = React.useState(false);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  React.useEffect(async () => {
-    const url = "http://localhost:3333/produtos";
-    const response = await fetch(url);
-    const data = await response.json();
-    setProdutos(data);
-  }, [renderProdutos]);
+    const produtos = useSelector((state) => {
+        return(
+            state.Products
+        )
+    })
   
     function mostrar_categoria(categorias) {
         let elementos = document.getElementsByClassName('box-item');
@@ -40,7 +33,7 @@ function Produtos() {
 
   return (
     <div className="container-fluid m-3 row">
-            <div className="list-group col-3 d-block categorias">
+            <div className="list-group d-block categorias col-sm-12 col-md-3">
             <h3 className="h3">Categoria de Produtos</h3>
                 <ul>
                     <li className="list-group-item" onClick={mostrar_todos}>Todos os Produtos (12)</li>
@@ -52,17 +45,17 @@ function Produtos() {
                 </ul>
             </div>
 
-            <div className="col-sm wrap-produtos">
-                {produtos.map(element => {
+            <div className="col-sm-12 col-md-9 wrap-produtos">
+                {produtos.map(item => {
                     return (
-                        <div key={element.idproduto} className="card w-25 box-item">
+                        <div key={item.idproduto} className="card w-25 box-item">
                             <div className="card-body">
-                                <img className="card-img-top zoom" src={require(`../../imgs/Produtos/${element.imagem}`).default} alt={element.categoria}></img>
-                                <h5 className="card-title">{element.descricao}</h5>
-                                <p className="card-text preco">De: <strike>R$ {element.preco}</strike></p>
-                                <p className="card-text">Por: R$ {element.precofinal}</p>
-                                <a className="btn btn-fs text-light" href="#!">Acessar produto</a>
-                                <a className="btn btn-fs text-light mt-2" href="#!">Adicionar no Carrinho</a>
+                                <img className="card-img-top zoom" src={require(`../../imgs/Produtos/${item.imagem}`).default} alt={item.categoria}></img>
+                                <h5 className="card-title text-dark">{item.descricao}</h5>
+                                <p className="card-text preco">De: <strike>R$ {item.preco}</strike></p>
+                                <p className="card-text text-dark">Por: R$ {item.precofinal}</p>
+                                <button type="button" className="btn btn-fs text-light">Acessar produto</button>
+                                <button onClick={() => dispatch(ADD_TO_CART(item.idproduto))} type="button" className="btn btn-fs text-light mt-2" >Adicionar no Carrinho</button>
                             </div>
                         </div>
                 )})}

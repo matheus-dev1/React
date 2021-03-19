@@ -28,17 +28,17 @@
 }
 
 .zoom {
-    padding: 50px;
+    padding: 25px;
     transition: transform .2s; /* Animation */
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
     /* Primeiro eu defino um tamanho para as imagens */
     /* Depois eu coloco um animacao para aumentar durante o periodo de 2 segundos ele vai aumentando ate chegar no zoom definido */
   }
   
 .zoom:hover {
-    transform: scale(2.0); 
+    transform: scale(1.5); 
     /* Aqui eu vou usar o hover que faz alguma coisa quando passado o mouse por cima. */
     /* A Propriedade CSS transform permite modificar o espaço coordenado do modelo de formatação CSS. Usando-a, elementos podem ser traduzidos, rotacionados, ter seu tamanho ajustado e inclinados de acordo com os valores definidos. */
     /* O valor scale modificará a dimensão do elemento. Ele aumentará proporcionalmente o tamanho do elemento levando em consideração o tamanho original do elemento. No meu caso 200% */

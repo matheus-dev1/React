@@ -1,9 +1,6 @@
-.resize-img {
-    width: 100px;
-    height: 70px;
-}
-
-.btn-fs {
-    /* color: white; */
-    background-image: linear-gradient(to right, #FF6347, #FF0000);
+.wrap-lojas {
+    min-height: 70vh;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
 }

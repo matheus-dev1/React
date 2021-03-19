@@ -43,10 +43,11 @@ function Pedidos() {
       .then((dados) => {
         setRenderPedidos(!renderPedidos);
         setAlert(dados);
+        setTimeout(async () => {setAlert(true)}, 2000);
       })
   }
   
-  setTimeout(async () => {setAlert(false)}, 10000);
+
 
   return (
     <div className="container mt-3">
@@ -114,13 +115,13 @@ function Pedidos() {
                   // Dentro de um componente podemos ter vairos return(
                     <div key={element.idpedidos} className="card w-75 mt-4 mx-auto">
                       <ul className="list-group list-group-flush border border-danger">
-                        <li className="list-group-item border-bottom-danger">Nome: {element.nome_cli}</li>
-                        <li className="list-group-item border-bottom-danger">Endereco: {element.endereco}</li>
-                        <li className="list-group-item border-bottom-danger">Telefone: {element.telefone}</li>
-                        <li className="list-group-item border-bottom-danger">Produto: {element.produto}</li>
-                        <li className="list-group-item border-bottom-danger">Valor Unitario: {element.valor_uni}</li>
-                        <li className="list-group-item border-bottom-danger">Quantidade: {element.qtd_prod}</li>
-                        <li className="list-group-item border-bottom-danger">Valor Total: {element.valor_total}</li>
+                        <li className="list-group-item border-bottom-danger text-dark">Nome: {element.nome_cli}</li>
+                        <li className="list-group-item border-bottom-danger text-dark">Endereco: {element.endereco}</li>
+                        <li className="list-group-item border-bottom-danger text-dark">Telefone: {element.telefone}</li>
+                        <li className="list-group-item border-bottom-danger text-dark">Produto: {element.produto}</li>
+                        <li className="list-group-item border-bottom-danger text-dark">Valor Unitario: {element.valor_uni}</li>
+                        <li className="list-group-item border-bottom-danger text-dark">Quantidade: {element.qtd_prod}</li>
+                        <li className="list-group-item border-bottom-danger text-dark">Valor Total: {element.valor_total}</li>
                       </ul>
                     </div>
                 );

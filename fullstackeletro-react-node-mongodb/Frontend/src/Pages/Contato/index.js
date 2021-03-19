@@ -1,6 +1,6 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  import React from "react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React from "react";
 // Eu faco o import do react para poder usar codigo jsx.
-import {Link} from "react-router-dom";
 import './contato.css';
 import WhatsApp from '../../imgs/Contato/whatsapp_icon.png';
 import Email from '../../imgs/Contato/email_icon.png';
@@ -14,7 +14,7 @@ function Contato() {
 
   let [nomeState, setNome] = React.useState("");
   let [emailState, setEmail] = React.useState("");
-  let [assuntoState, setAssunto] = React.useState("");                                                                                                                                                                                                            
+  let [assuntoState, setAssunto] = React.useState("");
   let [mensagemState, setMensagem] = React.useState("");
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -51,37 +51,30 @@ function Contato() {
     
   return (
     <div className="container mt-3">
-      <h1 className="h1 text-center">Entre em contato conosco</h1>
-      <div className="row"> 
-
-        <div className="col">
-          <div className="card text-center">
-              <Link to="#">
-                <img className="img-fluid card-img-top resize-img w-25 h-25" src={WhatsApp} alt="WhatsApp"></img>
-              </Link>
-                <div className="card-body">
-                  <h5 className="card-title">WhatsApp</h5>
-                  <p className="card-text">(21) 3333-3333</p>
-                  <a href="#!" className="btn btn-fs text-light">Contactar-nos</a>
-                </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <img className="img-fluid card-img-top  w-25 h-25" src={WhatsApp} alt="WhatsApp"></img>
+              <h5 class="card-title text-dark">WhatsApp</h5>
+              <p class="card-text text-dark">(21) 3333-3333</p>
+              <a href="#" class="btn btn-fs text-light">Contactar-nos</a>
+            </div>
           </div>
         </div>
-
-        <div className="col">
-          <div className="card text-center">
-              <Link to="#">
-                <img className="img-fluid card-img-top resize-img w-25 h-25" src={Email} alt="Email"></img>
-              </Link>
-                <div className="card-body">
-                  <h5 className="card-title">Email</h5>
-                  <p className="card-text">fullstackeletro@dev.com</p>
-                  <a href="#!" className="btn btn-fs text-light">Contactar-nos</a>
-                </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body">
+              <img className="img-fluid card-img-top w-25 h-25" src={Email} alt="Email"></img>
+              <h5 class="card-title text-dark">E-mail</h5>
+              <p class="card-text text-dark">fullstackeletro@dev.com</p>
+              <a href="#" class="btn btn-fs text-light">Contactar-nos</a>
             </div>
+          </div>
         </div>
       </div>
 
-      <div className="row justify-content-center pt-5">
+      <div className="row justify-content-center pt-4">
         <form className="container" onSubmit={mensagemRegister}>
           <div className="form-group input-group">
               <div className="input-group-prepend">
@@ -135,10 +128,10 @@ function Contato() {
                   // Dentro de um componente podemos ter vairos return(
                     <div key={element.id} className="card w-75 mt-4 mx-auto">
                       <ul class="list-group list-group-flush border border-danger">
-                        <li class="list-group-item border-bottom-danger">Nome: {element.nome}</li>
-                        <li class="list-group-item">E-mail: {element.email}</li>
-                        <li class="list-group-item">Assunto: {element.assunto}</li>
-                        <li class="list-group-item pb-3">Mensagem: {element.mensagem}</li>
+                        <li class="list-group-item border-bottom-danger text-dark">Nome: {element.nome}</li>
+                        <li class="list-group-item text-dark">E-mail: {element.email}</li>
+                        <li class="list-group-item text-dark">Assunto: {element.assunto}</li>
+                        <li class="list-group-item pb-3 text-dark">Mensagem: {element.mensagem}</li>
                       </ul>
                     </div>
                 );
