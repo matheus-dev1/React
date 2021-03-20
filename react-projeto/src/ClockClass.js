@@ -4,14 +4,17 @@ import React from 'react';
 
 export class ClockClass extends React.Component {
     constructor(props){
+        // Toda vez que eu instanciar um objeto eu vou executar o metodo constructor(){}
         super(props);
         // Aqui eu estou definindo que o valor inicial do meu estado eh a hora atual, isso ocorre uma vez durante a execucao desta classe, depois disso a alteracao do estado sera responsavel o setState({date: new Date()})
         this.state = {
             date: new Date(),
             nome: "Matheus"
         };
-        //Estou declarando uma variavel "date" aonde eu passo o objeto Date() que e a data atual e 
-        //Armazeno em this.state que e o estado.
+        // Estou declarando uma variavel "date" aonde eu passo o objeto Date() que e a data atual e 
+        // Armazeno em this.state que e o estado.
+        // Quando a classe se chama ClockClass e se passar props, sua chamada ficaria assim:
+        // this.props.name === ClockClass.props.name
     }
 
     componentDidMount(){
