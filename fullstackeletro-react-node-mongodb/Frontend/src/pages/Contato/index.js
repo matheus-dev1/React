@@ -43,11 +43,11 @@ function Contato() {
         .then((response) => response.json())
         .then((dados) => {
           setRenderMensagens(!renderMensagens);
-          setAlert(dados);
+          setAlert(true);
         })
     }
 
-    setTimeout(async () => {setAlert(false)}, 10000);
+    setTimeout(async () => {setAlert(false)}, 5000);
     
   return (
     <div className="container mt-3">
@@ -132,6 +132,11 @@ function Contato() {
                         <li class="list-group-item text-dark">E-mail: {element.email}</li>
                         <li class="list-group-item text-dark">Assunto: {element.assunto}</li>
                         <li class="list-group-item pb-3 text-dark">Mensagem: {element.mensagem}</li>
+                        <div className="">
+                          <button href="#" class="btn btn-primary text-light w-25 m-3 d-inline-block ">Editar</button>
+                          <button href="#" class="btn btn-fs text-light w-25 m-3 d-inline-block">Apagar</button>
+                          <button href="#" class="btn btn-info text-light m-3 w-25 d-inline-block">Alterar</button>
+                        </div>
                       </ul>
                     </div>
                 );

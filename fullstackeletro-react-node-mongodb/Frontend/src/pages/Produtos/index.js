@@ -4,6 +4,9 @@ import { ADD_TO_CART } from '../../actions'
 import './produtos.css';
 
 function Produtos() {
+
+    let [alert, setAlert] = React.useState(false);
+
     const dispatch = useDispatch()
 
     const produtos = useSelector((state) => {
@@ -31,19 +34,31 @@ function Produtos() {
         }
     }
 
+    function adicionarProduto(id){
+        dispatch(ADD_TO_CART(id))
+        setAlert(true)
+        setTimeout(async () => {setAlert(false)}, 5000);
+    }
+
   return (
     <div className="container-fluid m-3 row">
             <div className="list-group d-block categorias col-sm-12 col-md-3">
             <h3 className="h3">Categoria de Produtos</h3>
                 <ul>
-                    <li className="list-group-item" onClick={mostrar_todos}>Todos os Produtos (12)</li>
-                    <li className="list-group-item" onClick={() => mostrar_categoria('geladeira')} >Geladeiras (3)</li>
-                    <li className="list-group-item" onClick={() => mostrar_categoria('fogao')} >Fogoes (2)</li>
-                    <li className="list-group-item" onClick={() => mostrar_categoria('microondas')} >Microondas (3)</li>
-                    <li className="list-group-item" onClick={() => mostrar_categoria('lavaroupas')} >Lava Roupas (3)</li>
-                    <li className="list-group-item" onClick={() => mostrar_categoria('lavaloucas')} >Lava-Loucas (1)</li>
+                    <li className="list-group-item pointer" onClick={mostrar_todos}>Todos os Produtos (12)</li>
+                    <li className="list-group-item pointer" onClick={() => mostrar_categoria('geladeira')} >Geladeiras (3)</li>
+                    <li className="list-group-item pointer" onClick={() => mostrar_categoria('fogao')} >Fogoes (2)</li>
+                    <li className="list-group-item pointer" onClick={() => mostrar_categoria('microondas')} >Microondas (3)</li>
+                    <li className="list-group-item pointer" onClick={() => mostrar_categoria('lavaroupas')} >Lava Roupas (3)</li>
+                    <li className="list-group-item pointer" onClick={() => mostrar_categoria('lavaloucas')} >Lava-Loucas (1)</li>
                 </ul>
             </div>
+
+            {alert && 
+                <div className="alert alert-success mt-4 positionAlert" role="alert">
+                    Produto adicionado ao Carrinho!
+                </div>
+            }
 
             <div className="col-sm-12 col-md-9 wrap-produtos">
                 {produtos.map(item => {
@@ -52,10 +67,10 @@ function Produtos() {
                             <div className="card-body">
                                 <img className="card-img-top zoom" src={require(`../../imgs/Produtos/${item.imagem}`).default} alt={item.categoria}></img>
                                 <h5 className="card-title text-dark">{item.descricao}</h5>
-                                <p className="card-text preco">De: <strike>R$ {item.preco}</strike></p>
-                                <p className="card-text text-dark">Por: R$ {item.precofinal}</p>
+                                <p className="card-text preco">De: <strike>R$: {item.preco}</strike></p>
+                                <p className="card-text text-dark">Por: R$: {item.precofinal}</p>
                                 <button type="button" className="btn btn-fs text-light">Acessar produto</button>
-                                <button onClick={() => dispatch(ADD_TO_CART(item.idproduto))} type="button" className="btn btn-fs text-light mt-2" >Adicionar no Carrinho</button>
+                                <button onClick={() => adicionarProduto(item.idproduto)} type="button" className="btn btn-fs text-light mt-2" >Adicionar no Carrinho</button>
                             </div>
                         </div>
                 )})}

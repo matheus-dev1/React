@@ -10,6 +10,7 @@ import Lojas from "./pages/Lojas";
 import Pedidos from "./pages/Pedidos";
 import Produtos from './pages/Produtos';
 import CartS from './pages/Cart/CartS'
+import Error from './pages/Error'
 
 function Routes(){
     return(
@@ -20,6 +21,7 @@ function Routes(){
             <Route exact path="/lojas" component={Lojas}/>
             <Route exact path="/pedidos" component={Pedidos}/>
             <Route exact path="/contato" component={Contato}/>
+            <Route exact path="*" component={Error}/>
         </Switch>
     );
 }

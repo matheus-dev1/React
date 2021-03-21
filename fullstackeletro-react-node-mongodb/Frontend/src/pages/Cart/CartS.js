@@ -17,7 +17,6 @@ function CartS(){
                         item.qtd > 0
                     )}))})
 
-
     console.log(CartStates)
 
     function Clear(event){
@@ -38,18 +37,18 @@ function CartS(){
             <div className="row d-flex justify-content-center">
                 <button onClick={Clear} className="btn btn-fs text-white align-center">Clear Products</button>
             </div>
-            {totalProducts !== 0 && <h1 className="text-center mt-3">Valor total: R${totalProducts}</h1>}
+            {totalProducts !== 0 && <h1 className="text-center mt-3">Valor total: R$: {totalProducts}</h1>}
             {totalProducts === 0 && <h1 className="text-center mt-3">Nenhum produto no carrinho...</h1>}
             <div className="wrap-carrinho">
         {CartStates.map((item) => (
                 <div key={item.idproduto} className="card card-bg-cart">
                     <div className="card-body">
                         <img className="card-img-top zoom" src={require(`../../imgs/Produtos/${item.imagem}`).default} alt={item.categoria}></img>
-                        <h5 className="card-title text-dark">{item.descricao}</h5>
-                        <h6 className="card-subtitle mt-2 mb-2 text-dark">R${item.total}</h6>
-                        <button onClick={() => dispatch(ADD_TO_CART(item.idproduto))} className="btn btn-fs text-white ">Add</button>
-                        <p className="text-dark">{item.qtd}</p>
-                        <button onClick={() => dispatch(REMOVE_TO_CART(item.idproduto))} className="btn btn-fs text-white">Remove</button>
+                        <h4 className="card-title text-dark">{item.descricao}</h4>
+                        <h5 className="card-subtitle mt-2 mb-2 text-dark"><b>R$: {item.total}</b></h5>
+                        <button onClick={() => dispatch(ADD_TO_CART(item.idproduto))} className="btn btn-fs text-white">+</button>
+                        <h6 className="text-dark m-3">Quantidade: {item.qtd}</h6>
+                        <button onClick={() => dispatch(REMOVE_TO_CART(item.idproduto))} className="btn btn-fs text-white">-</button>
                     </div>
                 </div>
         ))}

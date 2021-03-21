@@ -42,12 +42,11 @@ function Pedidos() {
       .then((response) => response.json())
       .then((dados) => {
         setRenderPedidos(!renderPedidos);
-        setAlert(dados);
-        setTimeout(async () => {setAlert(true)}, 2000);
+        setAlert(true);
       })
   }
   
-
+  setTimeout(async () => {setAlert(false)}, 5000);
 
   return (
     <div className="container mt-3">
@@ -122,6 +121,11 @@ function Pedidos() {
                         <li className="list-group-item border-bottom-danger text-dark">Valor Unitario: {element.valor_uni}</li>
                         <li className="list-group-item border-bottom-danger text-dark">Quantidade: {element.qtd_prod}</li>
                         <li className="list-group-item border-bottom-danger text-dark">Valor Total: {element.valor_total}</li>
+                        <div className="">
+                          <button href="#" class="btn btn-primary text-light w-25 m-3 d-inline-block ">Editar</button>
+                          <button href="#" class="btn btn-fs text-light w-25 m-3 d-inline-block">Apagar</button>
+                          <button href="#" class="btn btn-info text-light m-3 w-25 d-inline-block">Alterar</button>
+                        </div>
                       </ul>
                     </div>
                 );

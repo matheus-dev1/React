@@ -43,3 +43,12 @@
     /* A Propriedade CSS transform permite modificar o espaço coordenado do modelo de formatação CSS. Usando-a, elementos podem ser traduzidos, rotacionados, ter seu tamanho ajustado e inclinados de acordo com os valores definidos. */
     /* O valor scale modificará a dimensão do elemento. Ele aumentará proporcionalmente o tamanho do elemento levando em consideração o tamanho original do elemento. No meu caso 200% */
   }
+
+  .positionAlert{
+      position: absolute;
+      text-align: center;
+  }
+
+  .pointer{
+    cursor:pointer
+  }
