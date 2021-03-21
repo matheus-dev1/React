@@ -30,7 +30,6 @@ export default class Home extends Component {
                 <Head>
                     {/* Definindo um titulo para a pagina com Next.js */}
                     <title>Next.JS</title>
-                    {/*  */}
                     <meta name="robots" content="index/follow" />
                     <meta name="description" content="Site para teste do Next.js"/>
                 </Head>

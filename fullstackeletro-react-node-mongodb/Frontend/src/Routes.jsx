@@ -4,12 +4,12 @@ import {
     Route
   } from "react-router-dom";
 
-import Contato from "./Pages/Contato";
-import Index from "./Pages/Index/index.js";
-import Lojas from "./Pages/Lojas";
-import Pedidos from "./Pages/Pedidos";
-import Produtos from './Pages/Produtos';
-import CartS from './Pages/Cart/CartS'
+import Contato from "./pages/Contato";
+import Index from "./pages/Index/index.js";
+import Lojas from "./pages/Lojas";
+import Pedidos from "./pages/Pedidos";
+import Produtos from './pages/Produtos';
+import CartS from './pages/Cart/CartS'
 
 function Routes(){
     return(
