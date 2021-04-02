@@ -19,7 +19,7 @@ function Contato() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(async () => {
-    const url = "http://localhost:3333/mensagem"
+    const url = "http://localhost:3333/mensagens"
     const response = await fetch(url);
     const data = await response.json();
     setMensagens(data);
@@ -51,24 +51,24 @@ function Contato() {
     
   return (
     <div className="container mt-3">
-      <div class="row d-flex justify-content-center">
-        <div class="col-sm-6 col-md-3">
-          <div class="card">
-            <div class="card-body">
+      <div className="row d-flex justify-content-center">
+        <div className="col-sm-6 col-md-3">
+          <div className="card">
+            <div className="card-body">
               <img className="img-fluid card-img-top  w-25 h-25" src={WhatsApp} alt="WhatsApp"></img>
-              <h5 class="card-title text-dark">WhatsApp</h5>
-              <p class="card-text text-dark">(21) 3333-3333</p>
-              <a href="#" class="btn btn-fs text-light">Contactar-nos</a>
+              <h5 className="card-title text-dark">WhatsApp</h5>
+              <p className="card-text text-dark">(21) 3333-3333</p>
+              <a href="#" className="btn btn-fs text-light">Contactar-nos</a>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card">
-            <div class="card-body">
+        <div className="col-sm-6 col-md-3">
+          <div className="card">
+            <div className="card-body">
               <img className="img-fluid card-img-top w-25 h-25" src={Email} alt="Email"></img>
-              <h5 class="card-title text-dark">E-mail</h5>
-              <p class="card-text text-dark">fullstackeletro@dev.com</p>
-              <a href="#" class="btn btn-fs text-light">Contactar-nos</a>
+              <h5 className="card-title text-dark">E-mail</h5>
+              <p className="card-text text-dark">fullstackeletro@dev.com</p>
+              <a href="#" className="btn btn-fs text-light">Contactar-nos</a>
             </div>
           </div>
         </div>
@@ -127,15 +127,15 @@ function Contato() {
                 return (
                   // Dentro de um componente podemos ter vairos return(
                     <div key={element.id} className="card w-75 mt-4 mx-auto">
-                      <ul class="list-group list-group-flush border border-danger">
-                        <li class="list-group-item border-bottom-danger text-dark">Nome: {element.nome}</li>
-                        <li class="list-group-item text-dark">E-mail: {element.email}</li>
-                        <li class="list-group-item text-dark">Assunto: {element.assunto}</li>
-                        <li class="list-group-item pb-3 text-dark">Mensagem: {element.mensagem}</li>
-                        <div className="">
-                          <button href="#" class="btn btn-primary text-light w-25 m-3 d-inline-block ">Editar</button>
-                          <button href="#" class="btn btn-fs text-light w-25 m-3 d-inline-block">Apagar</button>
-                          <button href="#" class="btn btn-info text-light m-3 w-25 d-inline-block">Alterar</button>
+                      <ul className="list-group list-group-flush border border-danger">
+                        <li className="list-group-item border-bottom-danger text-dark">Nome: {element.nome}</li>
+                        <li className="list-group-item text-dark">E-mail: {element.email}</li>
+                        <li className="list-group-item text-dark">Assunto: {element.assunto}</li>
+                        <li className="list-group-item pb-3 text-dark">Mensagem: {element.mensagem}</li>
+                        <div>
+                          <button href="#" className="btn btn-primary text-light w-25 m-3 d-inline-block ">Editar</button>
+                          <button href="#" className="btn btn-fs text-light w-25 m-3 d-inline-block">Apagar</button>
+                          <button href="#" className="btn btn-info text-light m-3 w-25 d-inline-block">Alterar</button>
                         </div>
                       </ul>
                     </div>

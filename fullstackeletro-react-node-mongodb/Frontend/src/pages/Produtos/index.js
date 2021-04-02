@@ -69,8 +69,8 @@ function Produtos() {
                                 <h5 className="card-title text-dark">{item.descricao}</h5>
                                 <p className="card-text preco">De: <strike>R$: {item.preco}</strike></p>
                                 <p className="card-text text-dark">Por: R$: {item.precofinal}</p>
-                                <button type="button" className="btn btn-fs text-light">Acessar produto</button>
-                                <button onClick={() => adicionarProduto(item.idproduto)} type="button" className="btn btn-fs text-light mt-2" >Adicionar no Carrinho</button>
+                                <button type="button" className="btn btn-fs text-light" data-container="body" data-toggle="tooltip" data-placement="left" title="Pagina ainda nao desenvolvida">Acessar produto</button>
+                                <button onClick={() => adicionarProduto(item.idproduto)} type="button" className="btn btn-fs text-light mt-2" data-toggle="tooltip" data-placement="left" title="Adicionar produto">Adicionar no Carrinho</button>
                             </div>
                         </div>
                 )})}

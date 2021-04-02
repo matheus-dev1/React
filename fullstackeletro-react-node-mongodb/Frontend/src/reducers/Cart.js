@@ -2,9 +2,7 @@ import * as actionType from '../actions/actionTypes'
 
 import allProducts from '../allProducts'
 
-let initialState = allProducts.map(item => ({...item, qtd: 0, total: 0}))
-
-console.log(initialState)
+let initialState = allProducts.map(item => ({...item, qtd: 0, total: 0}))   
 
 function Cart(state = initialState, action){
     switch(action.type){

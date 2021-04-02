@@ -5,7 +5,7 @@ module.exports = app => {
 
     const router = server.Router()
 
-    router.get("/a", mensagem.findMensagens)
+    router.get("/mensagens", mensagem.findMensagens)
 
     app.use(router)
 }

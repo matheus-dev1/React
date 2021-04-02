@@ -1,10 +1,10 @@
 module.exports = mongoose => {
     const PedidoSchema = mongoose.Schema({
-        idpedidos: {
-            type: Number,
+        nome_cli: {
+            type: String,
             required: true
         },
-        nome_cli: {
+        endereco: {
             type: String,
             required: true
         },

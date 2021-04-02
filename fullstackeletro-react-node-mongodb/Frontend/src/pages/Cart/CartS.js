@@ -17,8 +17,6 @@ function CartS(){
                         item.qtd > 0
                     )}))})
 
-    console.log(CartStates)
-
     function Clear(event){
         event.preventDefault()
         dispatch(CLEAR_CART())

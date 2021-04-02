@@ -53,7 +53,7 @@ require("./app/routes/produtos.routes")(app)
 require('./app/routes/pedidos.routes')(app)
 require('./app/routes/mensagens.routes')(app)
 
-const PORT = 5000
+const PORT = 3333
 app.listen(PORT, () => {
   console.log(`O servidor esta rodando na porta: ${PORT}.`)
 })
