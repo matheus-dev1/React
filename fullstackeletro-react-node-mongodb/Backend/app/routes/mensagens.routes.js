@@ -7,5 +7,11 @@ module.exports = app => {
 
     router.get("/mensagens", mensagem.findMensagens)
 
+    router.post("/mensagens", mensagem.registerMensagens)
+
+    router.put("/mensagens", mensagem.updateMensagens)
+
+    router.delete("/mensagens", mensagem.deleteMensagens)
+
     app.use(router)
 }

@@ -23,14 +23,15 @@ exports.registerPedido = async (request, response) => {
         qtd_prod: qtd_produto,
         valor_total: valor_total})
     return(
-        response.json(Result)
+        response.json(
+            Result
+        )
     )
 }
 
 exports.updatePedido = async (request, response) => {
     let { nome, endereco, telefone, produto, valor_uni, qtd_produto, idPost } = request.body
     let valor_total = valor_uni * qtd_produto
-    console.log(idPost)
     const Result = await Pedidos.update(
         {_id : ObjectId(idPost)},
         {$set: {nome_cli : nome,

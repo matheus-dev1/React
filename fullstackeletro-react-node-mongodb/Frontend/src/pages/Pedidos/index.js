@@ -56,8 +56,6 @@ function Pedidos() {
     // eslint-disable-next-line array-callback-return
     pedidos.map((element) => {
       if(event.target.value === document.getElementById(element._id).id){
-
-
         if(document.getElementById(element._id + " save").disabled === true){
           document.getElementById(element._id + " nome_cli").disabled = false
           document.getElementById(element._id + " endereco").disabled = false
@@ -79,7 +77,7 @@ function Pedidos() {
     })
   }
 
-  function pedidoUpdate(event){
+  function updatePedido(event){
     // eslint-disable-next-line array-callback-return
     event.preventDefault();
     pedidos.map((element) => {
@@ -204,15 +202,13 @@ function Pedidos() {
           </form>
         </div>
 
-      {alert === true && <div className="alert alert-success mx-auto mt-4 w-75" role="alert">Pedido efetuado com sucesso!</div>}
-      {alertUpdate === true && <div className="alert alert-info mx-auto mt-4 w-75" role="alert">Pedido alterado com sucesso!</div>}
-      {alertDelete === true && <div className="alert alert-danger mx-auto mt-4 w-75" role="alert">Pedido deletado com sucesso!</div>}
-        
+      {alert && <div className="alert alert-success mx-auto mt-4 w-75" role="alert">Pedido efetuado com sucesso!</div>}
+      {alertUpdate && <div className="alert alert-info mx-auto mt-4 w-75" role="alert">Pedido alterado com sucesso!</div>}
+      {alertDelete && <div className="alert alert-danger mx-auto mt-4 w-75" role="alert">Pedido deletado com sucesso!</div>}
+    
             {pedidos.map((element) => {
                 return (
-                    <div className="card w-75 mt-4 mx-auto">
-                      <form className="container" onSubmit={pedidoUpdate}>
-                      <div key={element._id}>
+                    <div key={element._id} className="card w-75 mt-4 mx-auto">
 
                         <div className="form-group input-group">
                           <div className="input-group-prepend">
@@ -271,36 +267,13 @@ function Pedidos() {
                         </div>
 
                         <div>
-                          <button className="btn btn-fs text-light w-25 m-3 d-inline-block" value={element._id} onClick={editPedido}>Editar</button>
+                          <button className="btn btn-fs text-light w-25 m-3 d-inline-block" value={element._id} id={element._id} onClick={editPedido}>Editar</button>
 
-                          <button className="btn btn-fs text-light w-25 m-3 d-inline-block" value={element._id} id={element._id + " save"} onClick={pedidoUpdate} disabled>Salvar</button>
+                          <button className="btn btn-fs text-light w-25 m-3 d-inline-block" value={element._id} id={element._id + " save"} onClick={updatePedido}>Salvar</button>
 
-                          <button type="button" className="btn btn-fs text-light w-25 m-3 d-inline-block" data-toggle="modal" data-target="#exampleModal">
-                            Deletar
-                          </button>
+                          <button className="btn btn-fs text-light w-25 m-3 d-inline-block" value={element._id} id={element._id + " delete"} onClick={pedidoDelete}>Deletar</button>
 
-                          <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div className="modal-dialog" role="document">
-                              <div className="modal-content">
-                                <div className="modal-header">
-                                  <h5 className="modal-title text-dark" id="exampleModalLabel">Deseja deletar este comentario?</h5>
-                                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div className="modal-body text-dark">
-                                  Se deletar este comentario nao podera recupera-lo!
-                                </div>
-                                <div className="modal-footer">
-                                  <button type="button" className="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                  <button type="button" className="btn btn-fs text-light" data-dismiss="modal" value={element._id} id={element._id + " delete"} onClick={pedidoDelete}>Deletar!</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> 
-                      </div>
-                    </form>
+                        </div>
                   </div>
                 );
             })}
