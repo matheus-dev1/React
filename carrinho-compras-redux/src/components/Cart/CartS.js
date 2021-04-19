@@ -12,11 +12,7 @@ function CartS(){
     const CartStates = useSelector((state) => {
     // O useSelector vai me buscar o valor do estado do reducer "Cart" com o metodo .filter eu estou filtrando que eu apenas quero puxar os objetos que tenham o valor da chave "qtd" maior que 0.
         return(
-            state.Cart.filter(
-                item => {
-                    return(
-                        item.qtd > 0
-                    )}))})
+            state.Cart.filter(item => { return(item.qtd > 0) }))})
 
 
     // console.log(CartStates)
