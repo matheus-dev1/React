@@ -15,6 +15,7 @@ function App(){
     return(
         <>
             <h1>Grid e Text</h1>
+            {/* A propriedade .children me retorna todos os filhoes de um elemento pai. */}
             <Grid>Elemento 1</Grid>
             <Grid>Elemento 2</Grid>
             <Grid>Elemento 3</Grid>
@@ -79,7 +80,6 @@ function App(){
             <h1>Apenas um Elemento Filho</h1>
             <OnlyOneChild>
                 <p>Apenas um</p>
-                {/* <p>Erro</p> */}
             </OnlyOneChild>
 
             <h1>Alterando todas a propriedades name dos elementos filhos de uma so vez</h1>
